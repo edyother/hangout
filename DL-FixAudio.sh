@@ -1,60 +1,59 @@
 #!/bin/bash
 
-# Youtube URL
-echo "Enter URL"
-read URL
+# ./DL-FixAudio.sh [ URL ] [ directory and new file name ]
+# for example
+# ./DL-FixAudio.sh youtube.com/sdfjihgho Episode5
 
-# Readable Filename
-echo "New File Name -- No Spaces - No Suffix"
-read A
+# I made this update because I wanted to start editing my videos from
+# the command line so that I can edit on underpowered hardware. 
 
-mkdir $A
-cd $A
+mkdir $2
+cd $2
 
 # Video File name
-V=$(youtube-dl --get-filename $URL)
+V=$(youtube-dl --get-filename $1)
 
 # Download video
-youtube-dl $URL
+youtube-dl $1
 
 # Copy audio to new file
-avconv -i "$V" $A.flac
+ffmpeg -i "$V" $1.flac
 echo "#########################"
 echo "## Video to Audio Done ##"
 echo "#########################"
 
 # Convert audio from stereo to mono
-sox -V3 $A.flac -c 1 $A.mono.flac
+sox -V3 $1.flac -c 1 $1.mono.flac
 echo "#########################"
 echo "## Stereo to Mono Done ##"
 echo "#########################"
 
 # Highpass filter at 80hz
-sox -V3 $A.mono.flac $A.mono.hp.flac highpass 80
+sox -V3 $1.mono.flac $1.mono.hp.flac highpass 80
 echo "###################"
 echo "## Highpass Done ##"
 echo "###################"
 
 # Dynamic Range Compression
-sox -V3 $A.mono.hp.flac $A.mono.hp.comp.flac compand 0.3,1.5 6:-60,-45,-15 -7 -90 0.3
+sox -V3 $1.mono.hp.flac $1.mono.hp.comp.flac compand 0.3,1.5 6:-60,-45,-15 -7 -90 0.3
 echo "######################"
 echo "## Compression Done ##"
 echo "######################"
 
 # Normalize to -1db
-sox -V3 $A.mono.hp.comp.flac $A.mono.hp.comp.norm.flac gain -n -1
+sox -V3 $1.mono.hp.comp.flac $1.mono.hp.comp.norm.flac gain -n -1
 echo "########################"
 echo "## Normalization Done ##"
 echo "########################"
 
 # Convert audio to mp3 format
-flac -cd $A.mono.hp.comp.norm.flac |lame --verbose -b 96 - $A.mp3
+flac -cd $1.mono.hp.comp.norm.flac | lame --verbose -b 96 - $1.mp3
 echo "#########################"
 echo "## mp3 Conversion Done ##"
 echo "#########################"
 
 # Make new video with the improved audio
-avconv -i "$V" -i $A.mp3 -c:v copy -c:a copy -map 0:v -map 1:a $A.mp4
+ffmpeg -i "$V" -i $1.mp3 -vcodec copy -acodec copy -map 0:v -map 1:a $1.flv
 echo "####################"
 echo "## New Video Done ##"
 echo "####################"
