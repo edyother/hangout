@@ -6,5 +6,8 @@
 # ./cutprep.sh [songname] [start time in seconds] [end time in seconds]
 # ./cutprep.sh Yarmouth 152.4 342.7
 
-echo ffmpeg -ss $2 -t $(echo $3-$2 | bc -l) -i '$I' -acodec copy -vcodec copy $1.flv >> cutscript.txt
+# "$I" will be defined in the resulting script as the video file that
+# all of these clips will be cut from.
+
+echo ffmpeg -ss $2 -t $(echo $3-$2 | bc -l) -i '$I' -acodec copy -vcodec copy $1.'${I##*.}' >> cutscript.txt
 echo "" >> cutscript.txt
