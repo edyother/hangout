@@ -17,45 +17,47 @@ V=$(youtube-dl --get-filename $1)
 youtube-dl $1
 
 # Copy audio to new file
-ffmpeg -i "$V" $1.flac
+ffmpeg -i "$V" $2.flac
 echo "#########################"
 echo "## Video to Audio Done ##"
 echo "#########################"
 
 # Convert audio from stereo to mono
-sox -V3 $1.flac -c 1 $1.mono.flac
+sox -V3 $2.flac -c 1 $2.mono.flac
 echo "#########################"
 echo "## Stereo to Mono Done ##"
 echo "#########################"
 
 # Highpass filter at 80hz
-sox -V3 $1.mono.flac $1.mono.hp.flac highpass 80
+sox -V3 $2.mono.flac $2.mono.hp.flac highpass 80
 echo "###################"
 echo "## Highpass Done ##"
 echo "###################"
 
 # Dynamic Range Compression
-sox -V3 $1.mono.hp.flac $1.mono.hp.comp.flac compand 0.3,1.5 6:-60,-45,-15 -7 -90 0.3
+sox -V3 $2.mono.hp.flac $2.mono.hp.comp.flac compand 0.3,1.5 6:-60,-45,-15 -7 -90 0.3
 echo "######################"
 echo "## Compression Done ##"
 echo "######################"
 
 # Normalize to -1db
-sox -V3 $1.mono.hp.comp.flac $1.mono.hp.comp.norm.flac gain -n -1
+sox -V3 $2.mono.hp.comp.flac $2.mono.hp.comp.norm.flac gain -n -1
 echo "########################"
 echo "## Normalization Done ##"
 echo "########################"
 
 # Convert audio to mp3 format
-flac -cd $1.mono.hp.comp.norm.flac | lame --verbose -b 96 - $1.mp3
+flac -cd $2.mono.hp.comp.norm.flac | lame --verbose -b 96 - $2.mp3
 echo "#########################"
 echo "## mp3 Conversion Done ##"
 echo "#########################"
 
 # Make new video with the improved audio
-ffmpeg -i "$V" -i $1.mp3 -vcodec copy -acodec copy -map 0:v -map 1:a $1.'${I##*.}'
+ffmpeg -i "$V" -i $2.mp3 -vcodec copy -acodec copy -map 0:v -map 1:a $2.'${I##*.}'
 echo "####################"
 echo "## New Video Done ##"
 echo "####################"
+
+mv $V original.$2.'${I##*.}'
 
 cd ../
