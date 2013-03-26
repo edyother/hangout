@@ -11,3 +11,6 @@
 
 echo ffmpeg -ss $2 -t $(echo $3-$2 | bc -l) -i '$I' -acodec copy -vcodec copy $1.'${I##*.}' >> cutscript.txt
 echo "" >> cutscript.txt
+
+# Afterward concatenate the files into one video with this
+# mencoder -oac copy -ovc copy -idx -o outputfile.??? infile1.??? infile2.??? ...
