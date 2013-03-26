@@ -1,0 +1,43 @@
+################################
+## For Website during the Day ##
+################################
+
+<h3>Tonight at 9pm EDT (1am UTC) this text will be replaced by live video of Episode 6 of my <a href="https://plus.google.com/events/cdp078q3gp1kbd5q54qkkcio210">Traditional Music Hangouts on Air</a></h3><p><a href="http://www.youtube.com/watch?v=cfv2ue13vj4&feature=share&list=PLCymceESnYFO2kFZXxrwEkdSKX2X0sxff">You can take a look at previous episodes here</a></p>
+
+###########################
+## For website when live ##
+###########################
+
+<h3><a href="https://plus.google.com/events/cdp078q3gp1kbd5q54qkkcio210">Traditional Music Hangout on Air Episode 6</a><br>Live Now!</h3><br><br>
+<iframe width=420 height=315 src=http://www.youtube.com/embed/z7t_4sQsZ-8 frameborder=0 allowfullscreen></iframe>
+
+##########################################
+## Change youtube link in G+ event page ##
+##########################################
+
+http://youtu.be/z7t_4sQsZ-8
+
+############################
+## Post this to G+ Status ##
+############################
+
+Episode 6 of my *Traditional Music Hangouts on Air* will be going live shortly (9pm EDT)
+
+http://youtu.be/z7t_4sQsZ-8
+
+You can chat live by using the comments on the event page here
+
+https://plus.google.com/events/cdp078q3gp1kbd5q54qkkcio210
+
+##############################################################
+## Post this to Facebook Staus, and all the relevant groups ##
+##############################################################
+
+Episode 6 of my Traditional Music Hangouts on Air will be going live shortly (9pm EDT)
+
+http://youtu.be/z7t_4sQsZ-8
+##########################
+## Post this to Twitter ##
+##########################
+
+Traditional Music Hangouts on Air #6 is going live shortly. (9pmEDT 1amUTC) http://youtu.be/z7t_4sQsZ-8 #IrishMusic #Folk #Trad

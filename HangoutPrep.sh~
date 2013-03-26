@@ -1,19 +1,19 @@
 #!/bin/bash
 
-EpisodeNumber=6
+EpisodeNumber=5
 
-YouTubeLink="http://youtu.be/z7t_4sQsZ-8"
+YouTubeLink="http://youtu.be/_XhswN_PFhI"
 
 EventPageLink="https://plus.google.com/events/cdp078q3gp1kbd5q54qkkcio210"
 
-IFrameCode="<iframe width="420" height="315" src="http://www.youtube.com/embed/z7t_4sQsZ-8" frameborder="0" allowfullscreen></iframe>"
+IFrameCode="<iframe width="420" height="315" src="http://www.youtube.com/embed/6KpwzcE8xG0" frameborder="0" allowfullscreen></iframe>"
 
 
 echo "################################" > HPrep.txt
 echo "## For Website during the Day ##">> HPrep.txt
 echo "################################">> HPrep.txt
 echo "">> HPrep.txt
-echo "<h3>Tonight at 9pm EDT (1am UTC) this text will be replaced by live video of Episode $EpisodeNumber of my <a href="'"'$EventPageLink'"'">Traditional Music Hangouts on Air</a></h3><p><a href="'"http://www.youtube.com/watch?v=cfv2ue13vj4&feature=share&list=PLCymceESnYFO2kFZXxrwEkdSKX2X0sxff"'">You can take a look at previous episodes here</a></p>">> HPrep.txt
+echo "<h3>Tonight at 9pm EST (2am UTC) this text will be replaced by live video of Episode $EpisodeNumber of my <a href="'"'$EventPageLink'"'">Traditional Music Hangouts on Air</a></h3><p><a href="'"http://www.youtube.com/watch?v=cfv2ue13vj4&feature=share&list=PLCymceESnYFO2kFZXxrwEkdSKX2X0sxff"'">You can take a look at previous episodes here</a></p>">> HPrep.txt
 echo "">> HPrep.txt
 echo "###########################">> HPrep.txt
 echo "## For website when live ##">> HPrep.txt
@@ -32,7 +32,7 @@ echo "############################">> HPrep.txt
 echo "## Post this to G+ Status ##">> HPrep.txt
 echo "############################">> HPrep.txt
 echo "">> HPrep.txt
-echo "Episode $EpisodeNumber of my *Traditional Music Hangouts on Air* will be going live shortly (9pm EDT)">> HPrep.txt
+echo "Episode $EpisodeNumber of my *Traditional Music Hangouts on Air* will be going live shortly (9pm EST)">> HPrep.txt
 echo "">> HPrep.txt
 echo "$YouTubeLink">> HPrep.txt
 echo "">> HPrep.txt
@@ -44,12 +44,12 @@ echo "##############################################################">> HPrep.tx
 echo "## Post this to Facebook Staus, and all the relevant groups ##">> HPrep.txt
 echo "##############################################################">> HPrep.txt
 echo "">> HPrep.txt
-echo "Episode $EpisodeNumber of my Traditional Music Hangouts on Air will be going live shortly (9pm EDT)">> HPrep.txt
+echo "Episode $EpisodeNumber of my Traditional Music Hangouts on Air will be going live shortly (9pm EST)">> HPrep.txt
 echo "">> HPrep.txt
 echo "$YouTubeLink">> HPrep.txt
 echo "##########################">> HPrep.txt
 echo "## Post this to Twitter ##">> HPrep.txt
 echo "##########################">> HPrep.txt
 echo "">> HPrep.txt
-echo "Traditional Music Hangouts on Air #$EpisodeNumber is going live shortly. (9pmEDT 1amUTC) $YouTubeLink #IrishMusic #Folk #Trad">> HPrep.txt
-geany HPrep.txt
+echo "Episode $EpisodeNumber of Traditional Music Hangouts on Air is will be going live shortly. (9pm EST - 2am UTC) $YouTubeLink #IrishMusic #Folk #Trad">> HPrep.txt
+gedit HPrep.txt
