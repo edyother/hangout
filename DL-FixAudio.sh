@@ -53,11 +53,10 @@ echo "## mp3 Conversion Done ##"
 echo "#########################"
 
 # Make new video with the improved audio
-ffmpeg -i "$V" -i $2.mp3 -vcodec copy -acodec copy -map 0:v -map 1:a $2.'${I##*.}'
+ffmpeg -i "$V" -i $2.mp3 -vcodec copy -acodec copy -map 0:v -map 1:a $2.flv
 echo "####################"
 echo "## New Video Done ##"
 echo "####################"
 
-mv $V original.$2.'${I##*.}'
 
 cd ../
