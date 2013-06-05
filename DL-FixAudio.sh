@@ -4,8 +4,7 @@
 # for example
 # ./DL-FixAudio.sh youtube.com/sdfjihgho Episode5
 
-# I made this update because I wanted to start editing my videos from
-# the command line so that I can edit on underpowered hardware. 
+# requires youtube-dl, ffmpeg, sox, flac, and lame
 
 mkdir $2
 cd $2
