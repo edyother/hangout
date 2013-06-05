@@ -1,12 +1,12 @@
 #!/bin/bash
 
-EpisodeNumber=6
+EpisodeNumber=7
 
-YouTubeLink="http://youtu.be/z7t_4sQsZ-8"
+YouTubeLink="http://youtu.be/AqkCt_mcotM"
 
-EventPageLink="https://plus.google.com/events/cdp078q3gp1kbd5q54qkkcio210"
+EventPageLink="https://plus.google.com/u/0/events/c1d9n9al07s9jgh5naeeecipj0k"
 
-IFrameCode="<iframe width="420" height="315" src="http://www.youtube.com/embed/z7t_4sQsZ-8" frameborder="0" allowfullscreen></iframe>"
+IFrameCode="<iframe width="420" height="315" src="http://www.youtube.com/embed/AqkCt_mcotM" frameborder="0" allowfullscreen></iframe>"
 
 
 echo "################################" > HPrep.txt

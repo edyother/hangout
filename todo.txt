@@ -1,0 +1,10 @@
+# Todo list for the show
+
+Schedule next Hangout
+  Make Google Plus event page
+    Post Public
+    Reshare to communites
+    Post to Twitter
+  Make Facebook event page
+    Share to groups
+  Add to website calendar  
