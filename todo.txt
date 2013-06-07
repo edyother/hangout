@@ -8,3 +8,21 @@ Schedule next Hangout
   Make Facebook event page
     Share to groups
   Add to website calendar  
+
+# After Hangout is done
+
+Download and edit video
+  Run DL-FixAudio.sh
+  Make a list of all songs in the video
+  Make a list of what's going into the final video
+  Using mplayer, enter the timecodes into cutprep.sh to build cutscript.sh
+  Run cutscript.sh
+  Import all the clips into OpenShot
+  Assemble final video 
+  Add Fades and render
+Extract Audio with ffmpeg
+  Upload to edyother.com/podcast feed
+  Write podcast post
+  Upload to SoundCloud.com
+Upload new video to YouTube
+  Post to Google+, Facebook & Twitter  
